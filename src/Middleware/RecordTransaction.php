@@ -14,6 +14,10 @@ class RecordTransaction
      */
     protected $agent;
 
+    /**
+     * RecordTransaction constructor.
+     * @param Agent $agent
+     */
     public function __construct(Agent $agent)
     {
         $this->agent = $agent;
@@ -42,8 +46,8 @@ class RecordTransaction
         ]);
 
         $transaction->setUserContext([
-            'id'    => optional($request->user())->id,
-            'email' => optional($request->user())->email,
+            'id'    => $this->optional($request->user())->id,
+            'email' => $this->optional($request->user())->email,
         ]);
 
         $transaction->setMeta([
@@ -88,6 +92,10 @@ class RecordTransaction
         );
     }
 
+    /**
+     * @param $start
+     * @return float
+     */
     protected function getDuration($start): float
     {
         $diff = microtime(true) - $start;
@@ -96,10 +104,30 @@ class RecordTransaction
         return round($corrected, 3);
     }
 
+    /**
+     * @param array $headers
+     * @return array
+     */
     protected function formatHeaders(array $headers): array
     {
         return collect($headers)->map(function ($values, $header) {
             return head($values);
         })->toArray();
+    }
+
+    /**
+     * Provide access to optional objects.
+     *
+     * @param  mixed  $value
+     * @param  callable|null  $callback
+     * @return mixed
+     */
+    function optional($value = null, callable $callback = null)
+    {
+        if (is_null($callback)) {
+            return new \faridcs\ApmLaravel\Utils\Optional($value);
+        } elseif (! is_null($value)) {
+            return $callback($value);
+        }
     }
 }
