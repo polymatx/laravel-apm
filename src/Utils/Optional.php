@@ -1,13 +1,14 @@
 <?php
 
-namespace Illuminate\Support;
+namespace faridcs\ApmLaravel\Utils;
 
 use ArrayAccess;
 use ArrayObject;
+use faridcs\ApmLaravel\Utils\Traits\Macroable;
 
 class Optional implements ArrayAccess
 {
-    use Traits\Macroable {
+    use Macroable {
         __call as macroCall;
     }
 

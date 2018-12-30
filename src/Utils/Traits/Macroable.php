@@ -1,6 +1,6 @@
 <?php
 
-namespace Illuminate\Support\Traits;
+namespace faridcs\ApmLaravel\Utils\Traits;
 
 use Closure;
 use ReflectionClass;
