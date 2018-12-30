@@ -1,9 +1,37 @@
 # laravel-apm
 PHP Elastic APM for Laravel
+This package is compatible with laravel >= 5.2
 
 ## Install
 ```
 composer require faridcs/laravel-apm
+```
+
+## Provider and Aliases
+Add this line to provider and aliases array in `config/app.php`
+```php
+'providers' => [
+
+        /*
+         * Laravel Framework Service Providers...
+         */
+        // ... more provider
+
+        faridcs\ApmLaravel\Providers\ElasticApmServiceProvider::class,
+    ],
+    
+'aliases' => [
+
+        // more aliases
+        
+        'ElasticApm' => faridcs\ApmLaravel\Facades\ElasticApm::class,
+    ],
+```
+
+## Config
+
+```
+php artisan vendor:publish --provider="alopeyk\ApmLaravel\Providers\ElasticApmServiceProvider" --tag="config"
 ```
 
 ## Middleware
