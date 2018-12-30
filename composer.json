@@ -2,6 +2,13 @@
     "name": "faridcs/laravel-apm",
     "description": "Laravel APM For Elasticsearch",
     "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Farid Vosoughi",
+            "email": "farid.vosoughi.65@gmail.com"
+        }
+    ],
     "require": {
         "php": ">=7.0",
         "ramsey/uuid": "^3.8",
@@ -10,11 +17,14 @@
     "require-dev": {
         "phpunit/phpunit": "~4.5"
     },
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "Farid Vosoughi",
-            "email": "farid.vosoughi.65@gmail.com"
+    "autoload":{
+        "psr-4":{
+            "faridcs\\ApmLaravel\\":"src/"
         }
-    ]
+    },
+    "autoload-dev":{
+        "psr-4":{
+            "PhilKra\\Tests\\":"tests/"
+        }
+    }
 }
