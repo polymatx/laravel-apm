@@ -26,6 +26,16 @@
             "faridcs\\ApmLaravel\\":"src/"
         }
     },
+    "extra":{
+        "laravel":{
+            "providers":[
+                "faridcs\\ApmLaravel\\Providers\\ElasticApmServiceProvider"
+            ],
+            "aliases":{
+                "ElasticApm":"faridcs\\ApmLaravel\\Facades\\ElasticApm"
+            }
+        }
+    },
     "config":{
         "optimize-autoloader":true
     }
