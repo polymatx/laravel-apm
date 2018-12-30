@@ -10,10 +10,10 @@
     ],
     "require": {
         "php": ">=7.0",
-        "illuminate/database":"5.2.x",
-        "illuminate/http":"5.2.x",
-        "illuminate/routing":"5.2.x",
-        "illuminate/support":"5.2.x",
+        "illuminate/database": ">=5.2.x",
+        "illuminate/http": ">=5.2.x",
+        "illuminate/routing": ">=5.2.x",
+        "illuminate/support": ">=5.2.x",
         "ramsey/uuid": "^3.8",
         "philkra/elastic-apm-php-agent": "^6.4"
     },
