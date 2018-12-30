@@ -1,7 +1,6 @@
 {
     "name": "faridcs/laravel-apm",
     "description": "Laravel APM For Elasticsearch",
-    "type": "project",
     "license": "MIT",
     "authors": [
         {
