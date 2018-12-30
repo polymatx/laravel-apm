@@ -1,6 +1,6 @@
 <?php
 
-namespace PhilKra\ElasticApmLaravel\Providers;
+namespace faridcs\ApmLaravel\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Database\Events\QueryExecuted;

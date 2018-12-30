@@ -1,6 +1,6 @@
 <?php
 
-namespace PhilKra\ElasticApmLaravel\Exceptions;
+namespace faridcs\ApmLaravel\Exceptions;
 
 /**
  *

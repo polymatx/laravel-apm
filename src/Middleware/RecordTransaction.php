@@ -1,6 +1,6 @@
 <?php
 
-namespace PhilKra\ElasticApmLaravel\Middleware;
+namespace faridcs\ApmLaravel\Middleware;
 
 use Closure;
 use Illuminate\Routing\Route;
