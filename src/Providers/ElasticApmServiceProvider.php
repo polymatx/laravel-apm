@@ -123,9 +123,9 @@ class ElasticApmServiceProvider extends ServiceProvider
                     'lineno' => array_get($trace, 'line', 0),
                     'library_frame' => false,
                     'vars' => $vars ?? null,
-                    'pre_context' => optional($sourceCode->get('pre_context'))->toArray(),
-                    'context_line' => optional($sourceCode->get('context_line'))->first(),
-                    'post_context' => optional($sourceCode->get('post_context'))->toArray(),
+                    'pre_context' => \faridcs\ApmLaravel\Utils\Helper::optional($sourceCode->get('pre_context'))->toArray(),
+                    'context_line' => \faridcs\ApmLaravel\Utils\Helper::optional($sourceCode->get('context_line'))->first(),
+                    'post_context' => \faridcs\ApmLaravel\Utils\Helper::optional($sourceCode->get('post_context'))->toArray(),
                 ];
             })->values();
             

@@ -46,8 +46,8 @@ class RecordTransaction
         ]);
 
         $transaction->setUserContext([
-            'id'    => $this->optional($request->user())->id,
-            'email' => $this->optional($request->user())->email,
+            'id'    => \faridcs\ApmLaravel\Utils\Helper::optional($request->user())->id,
+            'email' => \faridcs\ApmLaravel\Utils\Helper::optional($request->user())->email,
         ]);
 
         $transaction->setMeta([
@@ -78,7 +78,8 @@ class RecordTransaction
     }
 
     /**
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
+     * @return string
      */
     protected function getTransactionName(\Illuminate\Http\Request $request)
     {
@@ -113,21 +114,5 @@ class RecordTransaction
         return collect($headers)->map(function ($values, $header) {
             return head($values);
         })->toArray();
-    }
-
-    /**
-     * Provide access to optional objects.
-     *
-     * @param  mixed  $value
-     * @param  callable|null  $callback
-     * @return mixed
-     */
-    function optional($value = null, callable $callback = null)
-    {
-        if (is_null($callback)) {
-            return new \faridcs\ApmLaravel\Utils\Optional($value);
-        } elseif (! is_null($value)) {
-            return $callback($value);
-        }
     }
 }
