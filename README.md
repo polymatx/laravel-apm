@@ -4,7 +4,7 @@ This package is compatible with laravel >= 5.2
 
 ## Install
 ```
-composer require llamazesty/laravel-apm
+composer require faridcs/laravel-apm
 ```
 
 ## Provider and Aliases
